@@ -288,35 +288,30 @@ The codebase already has `get_active_milestones()` in `todo_engine.py` which ret
 ## 8. Cross-Repo Dependency Map
 
 ```
-Phase 1 (Kinderbud repo):
-  Issue K1: API token table + generation UI + auth middleware
-  Issue K2: API route scaffold + CSRF exemption + error handling
-  Issue K3: GET /me, GET /today endpoints
-  Issue K4: Todo action endpoints (complete, snooze, create)
-  Issue K5: Chat service + endpoint (new service)
-  Issue K6: Guide and plan endpoints
-  Issue K7: History and stats endpoints
-  Issue K8: Rate limiting middleware
-  Issue K9: API tests
+Phase 1 — API Foundation (Liam-Fistos/kinderbud):
+  #213: API token generation, storage, and management
+  #214: API auth middleware and route scaffold         [depends on #213]
+  #215: GET /me, GET /today endpoints                  [depends on #214]
+  #216: Todo action endpoints (complete, snooze, create) [depends on #214]
+  #217: Chat service + endpoint (new service)          [depends on #214]
+  #218: Guide and plan endpoints                       [depends on #214]
+  #219: History and stats endpoints                    [depends on #214]
+  #220: Rate limiting middleware                        [depends on #214]
+  #221: API integration tests                          [depends on #213–#220]
 
-Phase 2 (kinderbud-openclaw repo):  [depends on Phase 1 deployed]
-  Issue S1: SKILL.md + metadata + description
-  Issue S2: kb.sh helper script
-  Issue S3: Reference docs (API endpoints, data model)
-  Issue S4: Morning brief recipe + testing
-  Issue S5: Complete/snooze recipe + testing
-  Issue S6: Chat recipe + testing
-  Issue S7: Guide management recipe + testing
-  Issue S8: Setup and installation guide
+Phase 2 — Skill Core (Liam-Fistos/kinderbud-openclaw):  [depends on Phase 1 deployed]
+  #1: SKILL.md with full instructions and metadata     [depends on #2, #3]
+  #2: kb.sh helper script                              [standalone]
+  #3: API reference and data model docs                [standalone]
+  #4: Setup and installation guide                     [depends on #1]
 
-Phase 3 (both repos):  [depends on Phases 1-2 stable]
-  Issue K10: Weekly summary endpoint (Kinderbud)
-  Issue S9: Weekly summary recipe (skill)
-  Issue K11: Milestone progress endpoint (Kinderbud)
-  Issue S10: Milestone check recipe (skill)
-  Issue S11: Partner activity feed recipe (skill, uses existing /history endpoint)
-  Issue S12: Quick-add custom todos recipe (skill, uses existing POST /todos)
-  Issue S13: Cron-triggered daily push setup guide
+Phase 3 — Advanced Features (both repos):  [depends on Phases 1-2 stable]
+  kinderbud#222: Weekly summary endpoint
+  kinderbud-openclaw#5: Weekly summary recipe          [depends on kinderbud#222]
+  kinderbud-openclaw#6: Milestone progress check recipe [uses existing endpoints]
+  kinderbud-openclaw#7: Partner activity feed recipe   [uses existing endpoints]
+  kinderbud-openclaw#8: Cron-triggered daily brief guide [docs only]
+  kinderbud-openclaw#9: Quick-add custom todos recipe  [uses existing endpoints]
 ```
 
 ---
