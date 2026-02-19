@@ -61,7 +61,7 @@ CREATE INDEX IF NOT EXISTS idx_api_tokens_hash ON api_tokens(token_hash);
 
 The household is derived from the authenticated token. This simplifies the API and eliminates a class of authorization bugs (user A accessing household B's data by changing the URL).
 
-**Base URL:** `https://kinderbud.app/api/v1/`
+**Base URL:** `https://api.kinderbud.org/api/v1/`
 
 ### Endpoint catalog
 
@@ -170,7 +170,7 @@ kb.sh delete /plans/5
 
 **Environment variables consumed by the script:**
 - `KINDERBUD_API_KEY` — Bearer token (required, injected via OpenClaw config `apiKey`)
-- `KINDERBUD_API_URL` — Base URL (default: `https://kinderbud.app`, configurable for self-hosted instances)
+- `KINDERBUD_API_URL` — Base URL (default: `https://api.kinderbud.org`, configurable for self-hosted instances)
 
 **Error handling:**
 - Non-2xx HTTP status → print error message from response body, exit 1
@@ -224,7 +224,7 @@ User (OpenClaw) → POST /api/v1/chat → chat_service.py → Claude API → res
 
 **Flow:**
 1. User hears about Kinderbud (through OpenClaw's skill description, word of mouth, etc.)
-2. Goes to `https://kinderbud.app/register` in a browser
+2. Goes to `https://api.kinderbud.org/register` in a browser
 3. Completes registration (CAPTCHA, ToS, email/password)
 4. Goes through onboarding (add child, set birthday, pick a guide, configure API key)
 5. Goes to Settings → API Tokens → Generate Token
@@ -238,7 +238,7 @@ User (OpenClaw) → POST /api/v1/chat → chat_service.py → Claude API → res
 
 **Skill behavior when no token is configured:** The skill detects the missing `KINDERBUD_API_KEY` env var (via metadata gating) and won't load. If the user asks about Kinderbud without the skill loaded, OpenClaw's default behavior is to say it doesn't know about that. If they invoke `/kinderbud` directly, OpenClaw will tell them the skill requires configuration.
 
-**Skill behavior when token is invalid/expired:** The first API call returns 401. The skill instructions tell the agent to display: "Your Kinderbud token is invalid or has been revoked. Generate a new one at https://kinderbud.app/settings."
+**Skill behavior when token is invalid/expired:** The first API call returns 401. The skill instructions tell the agent to display: "Your Kinderbud token is invalid or has been revoked. Generate a new one at https://api.kinderbud.org/settings."
 
 ---
 

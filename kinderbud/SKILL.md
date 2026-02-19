@@ -13,7 +13,7 @@ You help manage a Kinderbud household — a parenting app that converts developm
 ## Setup
 
 - API key is provided via `KINDERBUD_API_KEY` environment variable
-- API base URL is in `KINDERBUD_API_URL` (default: `https://kinderbud.app`)
+- API base URL is in `KINDERBUD_API_URL` (default: `https://api.kinderbud.org`)
 - Helper script: `{baseDir}/scripts/kb.sh`
 - For full API details, read `{baseDir}/references/api_endpoints.md`
 - For the data model, read `{baseDir}/references/data_model.md`

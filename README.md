@@ -40,7 +40,7 @@ Add your Kinderbud API token to `~/.openclaw/openclaw.json`:
         "enabled": true,
         "apiKey": "kb_live_your_token_here",
         "env": {
-          "KINDERBUD_API_URL": "https://kinderbud.app"
+          "KINDERBUD_API_URL": "https://api.kinderbud.org"
         }
       }
     }
@@ -50,7 +50,7 @@ Add your Kinderbud API token to `~/.openclaw/openclaw.json`:
 
 ### Getting Your API Token
 
-1. Log in to your Kinderbud account at https://kinderbud.app
+1. Log in to your Kinderbud account at https://api.kinderbud.org
 2. Go to **Settings** > **API Tokens**
 3. Click **Generate Token**, give it a name (e.g., "OpenClaw")
 4. Copy the token (it's only shown once)
