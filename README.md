@@ -63,10 +63,14 @@ Add your Kinderbud API token to `~/.openclaw/openclaw.json`:
 | Morning brief | "What's on the Kinderbud schedule today?" |
 | Complete a todo | "Mark the reading activity as done" |
 | Snooze a todo | "Snooze tummy time to tomorrow" |
+| Undo an action | "Undo the last completed todo" |
+| Create a custom todo | "Add 'practice counting' as a daily activity for Emma" |
+| Edit a custom todo | "Change the reading activity to weekly" |
+| Delete a custom todo | "Remove the counting practice todo" |
 | Get activity help | "How should I do the serve-and-return activity?" |
 | Browse guides | "What Kinderbud guides are available?" |
 | Subscribe to a guide | "Subscribe Emma to the early math guide" |
-| Weekly summary | "How did we do on Kinderbud this week?" |
+| View stats | "How did we do on Kinderbud this week?" |
 
 ## Project Structure
 

@@ -70,6 +70,9 @@ All under `/api/v1/`. Auth via `Authorization: Bearer kb_live_...`. Household de
 | `GET` | `/todos/{id}` | Single todo with guide item details |
 | `POST` | `/todos/{id}/complete` | Mark complete (optional `notes`) |
 | `POST` | `/todos/{id}/snooze` | Snooze (optional `days`, `reason`) |
+| `POST` | `/todos/{id}/undo` | Undo action (requires `action_id`) |
+| `PUT` | `/todos/{id}` | Edit custom todo (title, description, frequency) |
+| `DELETE` | `/todos/{id}` | Soft-delete custom todo |
 | `POST` | `/todos` | Create custom todo |
 | `POST` | `/chat` | Send parenting chat message |
 | `GET` | `/chat` | Recent chat history |
